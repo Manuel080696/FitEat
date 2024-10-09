@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,7 +72,10 @@ const Login = () => {
         </a>
         <nav className="flex flex-row gap-1">
           <p className="">Don't have an account yet?</p>
-          <a href="/register" className="font-semibold text-gray-500 p-0">
+          <a
+            className="font-semibold text-gray-500 p-0"
+            onClick={() => navigate("/register")}
+          >
             Sign up here
           </a>
         </nav>

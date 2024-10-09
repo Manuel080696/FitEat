@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -6,6 +7,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,8 +35,8 @@ const Register = () => {
         className="flex flex-col items-center justify-center w-full gap-2 py-4"
       >
         <input
-          type="name"
-          id="text"
+          type="text"
+          id="name"
           className="border-[1px] rounded-md px-4 py-2 w-3/4 border-gray-500 my-2"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -42,8 +44,8 @@ const Register = () => {
         />
 
         <input
-          type="username"
-          id="text"
+          type="text"
+          id="username"
           className="border-[1px] rounded-md px-4 py-2 w-3/4 border-gray-500 my-2"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
@@ -81,7 +83,10 @@ const Register = () => {
 
         <nav className="flex flex-row gap-1">
           <p className="">Do you have an account?</p>
-          <a href="/login" className="font-semibold text-gray-500 p-0">
+          <a
+            className="font-semibold text-gray-500 p-0"
+            onClick={() => navigate("/login")}
+          >
             Log in here
           </a>
         </nav>
