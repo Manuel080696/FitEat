@@ -1,0 +1,30 @@
+header{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 20rem;
+  background-image: url("/headerBack.jpg");
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+img.logo{
+  width: 16rem;
+  filter: drop-shadow(10px 10px 35px rgba(0, 0, 0, 0.5));
+
+}
+
+h1.fitName{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -0.5rem;
+  font-size: 4rem;
+  font-family: "Agbalumo";
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+}

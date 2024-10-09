@@ -1,0 +1,248 @@
+[
+    {
+      "id": 1,
+      "name": "Grilled Chicken Breast",
+      "image_url": "https://hips.hearstapps.com/hmg-prod/images/grilled-chicken-breast-index-6626cdb057b5b.jpg?crop=0.503xw:1.00xh;0.249xw,0&resize=1200:*",
+      "category": "Meat",
+      "calories": 165
+    },
+    {
+      "id": 2,
+      "name": "Salmon Fillet",
+      "image_url": "https://www.spendwithpennies.com/wp-content/uploads/2023/03/1200-Baked-Salmon-Fillets-SpendWithPennies.jpg",
+      "category": "Fish",
+      "calories": 232
+    },
+    {
+      "id": 3,
+      "name": "Caesar Salad",
+      "image_url": "https://natashaskitchen.com/wp-content/uploads/2019/01/Caesar-Salad-Recipe-3.jpg",
+      "category": "Vegetable",
+      "calories": 210
+    },
+    {
+      "id": 4,
+      "name": "Lentil Soup",
+      "image_url": "https://www.allrecipes.com/thmb/UeFtapHyGFBo4Lx-72GxgjrOGnk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/13978-lentil-soup-DDMFS-4x3-edfa47fc6b234e6b8add24d44c036d43.jpg",
+      "category": "Legume",
+      "calories": 150
+    },
+    {
+      "id": 5,
+      "name": "Beef Steak",
+      "image_url": "https://takrecipe.com/wp-content/uploads/2022/10/beef-steak-recipe.jpg",
+      "category": "Meat",
+      "calories": 242
+    },
+    {
+      "id": 6,
+      "name": "Tofu Stir-Fry",
+      "image_url": "https://rainbowplantlife.com/wp-content/uploads/2023/01/tofu-stir-fry-cover-photo-1-of-1.jpg",
+      "category": "Vegetable",
+      "calories": 180
+    },
+    {
+      "id": 7,
+      "name": "Shrimp Scampi",
+      "image_url": "https://static01.nyt.com/images/2022/06/02/dining/ShrimpScampi_thumb/ShrimpScampi_thumb-square640.jpg",
+      "category": "Fish",
+      "calories": 220
+    },
+    {
+      "id": 8,
+      "name": "Quinoa Salad",
+      "image_url": "https://cookieandkate.com/images/2017/08/best-quinoa-salad-recipe-3.jpg",
+      "category": "Vegetable",
+      "calories": 160
+    },
+    {
+      "id": 9,
+      "name": "Chicken Tikka Masala",
+      "image_url": "https://cafedelites.com/wp-content/uploads/2018/04/Best-Chicken-Tikka-Masala-IMAGE-2.jpg",
+      "category": "Meat",
+      "calories": 370
+    },
+    {
+      "id": 10,
+      "name": "Grilled Tuna",
+      "image_url": "https://www.wholesomeyum.com/wp-content/uploads/2023/05/wholesomeyum-Grilled-Tuna-Steak-Recipe-14.jpg",
+      "category": "Fish",
+      "calories": 132
+    },
+    {
+      "id": 11,
+      "name": "Vegetable Stir-Fry",
+      "image_url": "https://natashaskitchen.com/wp-content/uploads/2020/08/Vegetable-Stir-Fry-2.jpg",
+      "category": "Vegetable",
+      "calories": 140
+    },
+    {
+      "id": 12,
+      "name": "Spaghetti Bolognese",
+      "image_url": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/the-best-spaghetti-bolognese-7e83155.jpg",
+      "category": "Meat",
+      "calories": 450
+    },
+    {
+      "id": 13,
+      "name": "Fish and Chips",
+      "image_url": "https://imag.bonviveur.com/fish-and-chips-el-tradicional-plato-britanico.jpg",
+      "category": "Fish",
+      "calories": 350
+    },
+    {
+      "id": 14,
+      "name": "Chicken Alfredo",
+      "image_url": "https://www.budgetbytes.com/wp-content/uploads/2022/07/Chicken-Alfredo-V3.jpg",
+      "category": "Meat",
+      "calories": 500
+    },
+    {
+      "id": 15,
+      "name": "Falafel",
+      "image_url": "https://recetasarabes.com/wp-content/uploads/2021/07/receta-falafel.jpg",
+      "category": "Legume",
+      "calories": 180
+    },
+    {
+      "id": 16,
+      "name": "Grilled Shrimp",
+      "image_url": "https://www.afarmgirlsdabbles.com/wp-content/uploads/2023/09/grilled-shrimp-afarmgirlsdabbles-01v.jpg",
+      "category": "Fish",
+      "calories": 120
+    },
+    {
+      "id": 17,
+      "name": "Beef Tacos",
+      "image_url": "https://www.onceuponachef.com/images/2023/08/Beef-Tacos.jpg",
+      "category": "Meat",
+      "calories": 300
+    },
+    {
+      "id": 18,
+      "name": "Mushroom Risotto",
+      "image_url": "https://www.allrecipes.com/thmb/9d8yV77PRL3wbRwcpAIxtZPdi5Q=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/85389-gourmet-mushroom-risotto-DDMFS-4x3-a8a80a8deb064c6a8f15452b808a0258.jpg",
+      "category": "Vegetable",
+      "calories": 250
+    },
+    {
+      "id": 19,
+      "name": "Eggplant Parmesan",
+      "image_url": "https://www.allrecipes.com/thmb/L9wpL6T8bgfo7C09-Euoa-OSN0A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/25321-eggplant-parmesan-ii-DDMFS-4x3-6d53ce79765b4c3d9f554d2a47e14d00.jpg",
+      "category": "Vegetable",
+      "calories": 320
+    },
+    {
+      "id": 20,
+      "name": "Chili Con Carne",
+      "image_url": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/C31E5540-45D4-4913-B967-AC64E7FD7CF4/Derivates/fba045ac-c208-4dea-a6ba-3b4a3203d7b4.jpg",
+      "category": "Meat",
+      "calories": 400
+    },
+    {
+      "id": 21,
+      "name": "Vegan Burrito",
+      "image_url": "https://cdn.loveandlemons.com/wp-content/uploads/2023/05/vegan-burrito.jpg",
+      "category": "Vegetable",
+      "calories": 350
+    },
+    {
+      "id": 22,
+      "name": "Pork Ribs",
+      "image_url": "https://media-cdn2.greatbritishchefs.com/media/vd0i3v43/26-april-selects-6.whqc_468x312q80.jpg",
+      "category": "Meat",
+      "calories": 550
+    },
+    {
+      "id": 23,
+      "name": "Chicken Shawarma",
+      "image_url": "https://hips.hearstapps.com/hmg-prod/images/190130-chicken-shwarma-horizontal-1549421250.png?crop=1xw:0.843328335832084xh;center,top&resize=1200:*",
+      "category": "Meat",
+      "calories": 450
+    },
+    {
+      "id": 24,
+      "name": "Vegetable Soup",
+      "image_url": "https://www.allrecipes.com/thmb/p4F_knUDCrUNusNOTyjY_dCp8d4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/13338-quick-and-easy-vegetable-soup-DDMFS-4x3-402702f59e7a41519515cecccaba1b80.jpg",
+      "category": "Vegetable",
+      "calories": 120
+    },
+    {
+      "id": 25,
+      "name": "Pasta Primavera",
+      "image_url": "https://images.themodernproper.com/billowy-turkey/production/posts/PastaPrimavera_10.jpg?w=1200&h=1200&q=60&fm=jpg&fit=crop&dm=1719193287&s=0104e0b241aea73e5709db128503d749",
+      "category": "Vegetable",
+      "calories": 350
+    },
+    {
+      "id": 26,
+      "name": "Chicken Wings",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfucytzRUIXrG9M2hQ_GBK3chHQ27YzNOimg&s",
+      "category": "Meat",
+      "calories": 350
+    },
+    {
+      "id": 27,
+      "name": "Grilled Veggie Skewers",
+      "image_url": "https://www.allrecipes.com/thmb/KBVMWciO-GJsEKnVOcUFvBDrOWk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/229166-grilled-veggie-skewers-DDMFS-013-4x3-38df5f3275934280a930c09d660a332c.jpg",
+      "category": "Vegetable",
+      "calories": 150
+    },
+    {
+      "id": 28,
+      "name": "Lamb Chops",
+      "image_url": "https://feelgoodfoodie.net/wp-content/uploads/2022/04/Baked-Lamb-Chops-08.jpg",
+      "category": "Meat",
+      "calories": 500
+    },
+    {
+      "id": 29,
+      "name": "Roast Chicken",
+      "image_url": "https://assets.epicurious.com/photos/62f16ed5fe4be95d5a460eed/1:1/w_4318,h_4318,c_limit/RoastChicken_RECIPE_080420_37993.jpg",
+      "category": "Meat",
+      "calories": 400
+    },
+    {
+      "id": 30,
+      "name": "Grilled Sea Bass",
+      "image_url": "https://www.thespruceeats.com/thmb/Bpi3_fN42-grEA-KQVazkhrhcrY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/grilled-sea-bass-with-garlic-butter-recipe-334370-hero-01-c4867bcfab4847c6b16d315ff4e113bc.jpg",
+      "category": "Fish",
+      "calories": 150
+    },
+    {
+      "id": 31,
+      "name": "Beef Burgers",
+      "image_url": "https://simplehomeedit.com/wp-content/uploads/2024/03/Homemade-Beef-Burgers-4.webp",
+      "category": "Meat",
+      "calories": 350
+    },
+    {
+      "id": 32,
+      "name": "Stuffed Bell Peppers",
+      "image_url": "https://www.dinneratthezoo.com/wp-content/uploads/2019/06/stuffed-bell-peppers-4.jpg",
+      "category": "Vegetable",
+      "calories": 220
+    },
+    {
+      "id": 33,
+      "name": "Baked Ziti",
+      "image_url": "https://www.simplyrecipes.com/thmb/uGmTDCSeJB4Ac2-M4h62-FCgmu0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Baked-Ziti-LEAD-db0d2e1b6e554b4aa6ff8a2f23f2f903.jpg",
+      "category": "Meat",
+      "calories": 400
+    },
+    {
+      "id": 34,
+      "name": "Clam Chowder",
+      "image_url": "https://s3.abcstatics.com/abc/sevilla/media/gurmesevilla/2013/10/clam-chowder.jpg",
+      "category": "Fish",
+      "calories": 300
+    },
+    {
+      "id": 35,
+      "name": "Vegetable Frittata",
+      "image_url": "https://www.themediterraneandish.com/wp-content/uploads/2021/05/vegetable-frittata-recipe-6.jpg",
+      "category": "Vegetable",
+      "calories": 250
+    }
+  ]
+  
