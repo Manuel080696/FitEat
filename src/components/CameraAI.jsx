@@ -29,6 +29,12 @@ export const CameraAI = ({ object, setObject }) => {
             video: { facingMode: "environment" },
           });
           videoRef.current.srcObject = stream;
+
+          // Ajustar tamaño del canvas al tamaño del video una vez que el video tenga metadatos
+          videoRef.current.onloadedmetadata = () => {
+            canvasRef.current.width = videoRef.current.videoWidth;
+            canvasRef.current.height = videoRef.current.videoHeight;
+          };
         } catch (error) {
           console.error("No se pudo acceder a la cámara:", error);
         }
@@ -92,13 +98,16 @@ export const CameraAI = ({ object, setObject }) => {
   }, [object, setObject]);
 
   return (
-    <div>
-      <video ref={videoRef} autoPlay muted width="390" height="844" />
+    <div style={{ position: "relative" }}>
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        style={{ width: "100%", height: "auto" }}
+      />
       <canvas
         ref={canvasRef}
-        width="390"
-        height="844"
-        style={{ position: "absolute", top: 0, left: 0, objectFit: "cover" }}
+        style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
       />
     </div>
   );
