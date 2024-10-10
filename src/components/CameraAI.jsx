@@ -30,10 +30,11 @@ export const CameraAI = ({ object, setObject }) => {
           });
           videoRef.current.srcObject = stream;
 
-          // Ajustar tamaño del canvas al tamaño del video una vez que el video tenga metadatos
+          // Ajustar el tamaño del canvas una vez que el video esté disponible
           videoRef.current.onloadedmetadata = () => {
-            canvasRef.current.width = videoRef.current.videoWidth;
-            canvasRef.current.height = videoRef.current.videoHeight;
+            const video = videoRef.current;
+            canvasRef.current.width = video.videoWidth;
+            canvasRef.current.height = video.videoHeight;
           };
         } catch (error) {
           console.error("No se pudo acceder a la cámara:", error);
@@ -54,6 +55,16 @@ export const CameraAI = ({ object, setObject }) => {
     const detectObjects = async () => {
       if (videoRef.current && modelRef.current) {
         const video = videoRef.current;
+
+        // Asegurarse de que el canvas coincide con las dimensiones del video
+        if (
+          canvasRef.current.width !== video.videoWidth ||
+          canvasRef.current.height !== video.videoHeight
+        ) {
+          canvasRef.current.width = video.videoWidth;
+          canvasRef.current.height = video.videoHeight;
+        }
+
         const input = tf.browser.fromPixels(video);
 
         // Detectar objetos con el modelo coco-ssd
@@ -103,7 +114,7 @@ export const CameraAI = ({ object, setObject }) => {
         ref={videoRef}
         autoPlay
         muted
-        style={{ width: "100%", height: "auto" }}
+        style={{ display: "block", width: "100%", height: "auto" }}
       />
       <canvas
         ref={canvasRef}
