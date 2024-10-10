@@ -26,7 +26,7 @@ export const CameraAI = ({ object, setObject }) => {
       if (navigator.mediaDevices.getUserMedia) {
         try {
           const stream = await navigator.mediaDevices.getUserMedia({
-            video: { facingMode: "user" },
+            video: { facingMode: "environment" },
           });
           videoRef.current.srcObject = stream;
         } catch (error) {
