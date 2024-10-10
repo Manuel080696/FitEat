@@ -1,111 +1,104 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
+import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import * as tf from "@tensorflow/tfjs";
-import yolo from "tfjs-yolo";
 
 export const CameraAI = ({ object, setObject }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  const [model, setModel] = useState(null);
+  const modelRef = useRef(null);
 
-  // Cargar el modelo de YOLO
   useEffect(() => {
+    // Cargar el modelo coco-ssd
     const loadModel = async () => {
-      const loadedModel = await yolo.v3tiny(); // Cargar la versión Tiny de YOLO para mejor rendimiento en navegadores
-      setModel(loadedModel);
+      try {
+        const model = await cocoSsd.load();
+        modelRef.current = model;
+        console.log("Modelo coco-ssd cargado correctamente.");
+      } catch (error) {
+        console.error("Error al cargar el modelo coco-ssd:", error);
+      }
     };
+
     loadModel();
-  }, []);
 
-  // Iniciar la cámara
-  useEffect(() => {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices
-        .getUserMedia({
-          video: {
-            facingMode: "environment", // usar la cámara trasera
-          },
-        })
-        .then((stream) => {
-          videoRef.current.srcObject = stream;
-          videoRef.current.play();
-        })
-        .catch((err) => {
-          console.error("Error al acceder a la cámara: ", err);
-        });
-    }
-  }, []);
-
-  // Detección de objetos en el feed de video
-  const detectObjects = async () => {
-    if (model && videoRef.current && videoRef.current.readyState === 4) {
-      const inputImage = tf.browser.fromPixels(videoRef.current);
-      const predictions = await model.predict(inputImage);
-      inputImage.dispose(); // Liberar memoria
-
-      // Dibujar los resultados en el canvas
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-      canvas.width = videoRef.current.videoWidth;
-      canvas.height = videoRef.current.videoHeight;
-      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
-      predictions.forEach((prediction, index) => {
-        if (index < 4) {
-          setObject((prev) => {
-            const newObject = [...prev];
-            newObject[index] = prediction.class;
-            return newObject;
+    // Acceder a la cámara
+    const startCamera = async () => {
+      if (navigator.mediaDevices.getUserMedia) {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "user" },
           });
+          videoRef.current.srcObject = stream;
+        } catch (error) {
+          console.error("No se pudo acceder a la cámara:", error);
         }
-      });
+      }
+    };
 
-      const [x, y, width, height] = prediction.bbox;
-      ctx.beginPath();
-      ctx.rect(x, y, width, height);
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = "red";
-      ctx.fillStyle = "red";
-      ctx.stroke();
+    startCamera();
 
-      // Dibuja la etiqueta y la confianza
-      ctx.fillText(
-        `${index} - ${object[index]} (${(prediction.score * 100).toFixed(2)}%)`,
-        x,
-        y > 10 ? y - 5 : 10
-      );
-    }
-  };
+    return () => {
+      const stream = videoRef.current?.srcObject;
+      const tracks = stream?.getTracks();
+      tracks?.forEach((track) => track.stop());
+    };
+  }, []);
 
-  // Detectar objetos en cada frame
   useEffect(() => {
-    const interval = setInterval(() => {
-      detectObjects();
-    }, 100); // Cada 100ms
+    const detectObjects = async () => {
+      if (videoRef.current && modelRef.current) {
+        const video = videoRef.current;
+        const input = tf.browser.fromPixels(video);
+
+        // Detectar objetos con el modelo coco-ssd
+        const results = await modelRef.current.detect(input);
+
+        // Filtrar y agregar solo objetos nuevos que no están en el estado `object`
+        results?.forEach((item) => {
+          if (!object.includes(item.class)) {
+            setObject((prevObjects) => [...prevObjects, item.class]);
+          }
+        });
+
+        // Dibujar en el canvas
+        const ctx = canvasRef.current.getContext("2d");
+        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        ctx.drawImage(
+          video,
+          0,
+          0,
+          canvasRef.current.width,
+          canvasRef.current.height
+        );
+
+        results.forEach((result) => {
+          const { bbox, class: className } = result;
+          ctx.beginPath();
+          ctx.rect(bbox[0], bbox[1], bbox[2], bbox[3]);
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = "red";
+          ctx.fillStyle = "red";
+          ctx.stroke();
+          ctx.fillText(className, bbox[0], bbox[1] - 10);
+        });
+
+        input.dispose();
+      }
+    };
+
+    const interval = setInterval(detectObjects, 100);
+
     return () => clearInterval(interval);
-  }, [model]);
+  }, [object, setObject]);
 
   return (
-    <div style={{ position: "relative" }}>
-      <video
-        ref={videoRef}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-        }}
-      />
+    <div>
+      <video ref={videoRef} autoPlay muted width="390" height="844" />
       <canvas
         ref={canvasRef}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
+        width="390"
+        height="844"
+        style={{ position: "absolute", top: 0, left: 0, objectFit: "cover" }}
       />
     </div>
   );
