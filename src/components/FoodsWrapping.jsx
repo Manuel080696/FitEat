@@ -22,7 +22,7 @@ const FoodsWrapping = ({ category }) => {
   }, [category]);
 
   return (
-    <ul className="grid grid-cols-1 gap-8 mt-8">
+    <ul className="grid grid-cols-1 gap-8 mt-4">
       {foods.map((food) => (
         <li
           key={food.id}

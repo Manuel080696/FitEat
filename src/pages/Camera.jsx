@@ -38,7 +38,7 @@ export const Camera = () => {
   return (
     <main className="flex flex-col gap-2 relative w-full h-screen">
       <CameraAI object={object} setObject={setObject} />
-      <section className="flex flex-col absolute bottom-0 w-full bg-white pb-24">
+      <section className="flex flex-col absolute bottom-0 w-full bg-white pb-24 px-4">
         <h3 className="text-xl font-bold text-center">Total calories</h3>
         <ul className="flex flex-col overflow-y-scroll max-h-14">
           {object.map((food, index) => (

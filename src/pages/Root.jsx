@@ -6,12 +6,13 @@ import { useEffect, useState } from "react";
 function Root() {
   const location = useLocation();
   const [currentLocation, setCurrentLocation] = useState(location);
+  console.log(currentLocation);
 
   useEffect(() => {
     setCurrentLocation(location?.pathname);
   }, [location]);
 
-  return currentLocation == "/camera" ? (
+  return currentLocation === "/camera" ? (
     <div id="root">
       <Outlet />
       <MenuBar location={currentLocation} />

@@ -26,7 +26,7 @@ const Register = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center w-full">
+    <section className="flex flex-col items-center justify-center w-full pb-24">
       <h2 className="flex flex-col items-center justify-center w-full text-4xl font-extrabold pt-12">
         Register
       </h2>

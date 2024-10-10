@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FoodsWrapping from "../components/FoodsWrapping";
+import { useLocation } from "react-router-dom";
 
 export const Home = () => {
+  const location = useLocation();
   const [category, setCategory] = useState("none");
+
+  useEffect(() => {
+    setCategory("none");
+  }, [location]);
 
   return (
     <main>
@@ -40,7 +46,7 @@ export const Home = () => {
       </nav>
 
       <section className="px-3">
-        <h2 className="text-2xl font-bold">Recomendaciones para ti</h2>
+        <h2 className="text-2xl font-bold">Recommendations for you...</h2>
         <FoodsWrapping category={category} />
       </section>
     </main>
